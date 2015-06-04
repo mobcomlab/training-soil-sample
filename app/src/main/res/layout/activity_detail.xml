@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/detail_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:text="Date:" />
+
+    <TextView
+        android:id="@+id/detail_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/detail_date_label"
+        android:layout_toEndOf="@id/detail_date_label"
+        android:padding="10dp"
+        android:textSize="20sp"
+        tools:text="01/06/54" />
+
+    <TextView
+        android:id="@+id/detail_x_location_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_date"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:text="X:" />
+
+    <TextView
+        android:id="@+id/detail_x_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_date"
+        android:layout_toRightOf="@id/detail_x_location_label"
+        android:layout_toEndOf="@id/detail_x_location_label"
+        android:padding="10dp"
+        android:textSize="20sp"
+        tools:text="8.39235723" />
+
+    <TextView
+        android:id="@+id/detail_y_location_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_x_location"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:text="Y:" />
+
+    <TextView
+        android:id="@+id/detail_y_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_x_location"
+        android:layout_toRightOf="@id/detail_y_location_label"
+        android:layout_toEndOf="@id/detail_y_location_label"
+        android:padding="10dp"
+        android:textSize="20sp"
+        tools:text="8.39235723" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_y_location">
+
+        <TextView
+            android:id="@+id/detail_ph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp"
+            android:textSize="60sp"
+            tools:text="8.43" />
+
+    </FrameLayout>
+
+</RelativeLayout>
