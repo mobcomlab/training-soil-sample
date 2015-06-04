@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -36,7 +37,7 @@ public class MainActivity
         setContentView(R.layout.activity_main);
 
         // Hide the map
-//        findViewById(R.id.map).setVisibility(View.GONE);
+        findViewById(R.id.map).setVisibility(View.GONE);
 
         // Get data
 //        final List<SoilSample> data = new DatabaseManager(this).getSoilSamples();
@@ -61,7 +62,13 @@ public class MainActivity
     @Override
     public final boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_recycler) {
+            findViewById(R.id.samples).setVisibility(View.VISIBLE);
+            findViewById(R.id.map).setVisibility(View.GONE);
+            return true;
+        } else if (id == R.id.action_map) {
+            findViewById(R.id.samples).setVisibility(View.GONE);
+            findViewById(R.id.map).setVisibility(View.VISIBLE);
             return true;
         }
         return super.onOptionsItemSelected(item);
