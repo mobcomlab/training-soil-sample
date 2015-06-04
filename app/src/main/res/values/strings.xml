@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Day 3</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_add">Add new sample</string>
+    <string name="action_delete">Delete samples</string>
+    <string name="action_get_from_ws">Get from 3M</string>
 </resources>

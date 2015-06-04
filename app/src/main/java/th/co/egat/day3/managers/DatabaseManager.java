@@ -29,19 +29,31 @@ public class DatabaseManager {
                 .findFirst();
     }
 
-    public void addSoilSample(final String id, final float xCoord, final float yCoord, final Date date, final float ph, final int cd) {
+    public void addSoilSample(final String id, final double xCoord, final double yCoord, final Date date, final float ph, final int cd) {
         final Realm realm = Realm.getInstance(context);
         realm.beginTransaction();
 
-        final SoilSample soilSample = realm.createObject(SoilSample.class);
+        SoilSample soilSample = getSoilSample(id);
+
+        // If doesn't exist then create
+        if (soilSample == null) {
+            soilSample = realm.createObject(SoilSample.class);
+        }
 
         soilSample.setId(id);
-        soilSample.setxCoord((double) xCoord);
-        soilSample.setyCoord((double) yCoord);
+        soilSample.setxCoord(xCoord);
+        soilSample.setyCoord(yCoord);
         soilSample.setDate(date);
         soilSample.setPh(ph);
         soilSample.setCd(cd);
 
+        realm.commitTransaction();
+    }
+
+    public void deleteSoilSamples() {
+        final Realm realm = Realm.getInstance(context);
+        realm.beginTransaction();
+        realm.clear(SoilSample.class);
         realm.commitTransaction();
     }
 
