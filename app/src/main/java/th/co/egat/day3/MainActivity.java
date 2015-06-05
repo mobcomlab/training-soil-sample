@@ -81,7 +81,7 @@ public class MainActivity
             findViewById(R.id.map).setVisibility(View.GONE);
             return true;
         }
-		else if (id == R.id.action_map) {
+		if (id == R.id.action_map) {
             findViewById(R.id.samples).setVisibility(View.GONE);
             findViewById(R.id.map).setVisibility(View.VISIBLE);
             return true;
