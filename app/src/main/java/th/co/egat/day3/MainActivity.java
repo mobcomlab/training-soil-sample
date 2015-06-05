@@ -52,8 +52,8 @@ public class MainActivity
             return true;
         }
         if (id == R.id.action_add) {
-            Intent intent = new Intent(this, DetailActivity.class);
-            startActivityForResult(intent, REQUEST_ADD);
+            //Intent intent = new Intent(this, AddSampleActivity.class);
+            //startActivityForResult(intent, REQUEST_ADD);
             return true;
         }
         if (id == R.id.action_get_from_ws) {
