@@ -54,7 +54,7 @@ public class WebServiceManager {
 
                                 JSONArray coords = feature.getJSONObject("geometry").getJSONArray("coordinates");
                                 double xCoord = coords.getDouble(0);
-                                double yCoord = coords.getDouble(0);
+                                double yCoord = coords.getDouble(1);
 
                                 JSONObject properties = feature.getJSONObject("properties");
 
