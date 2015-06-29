@@ -3,6 +3,8 @@ package th.co.egat.day3;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -42,6 +44,17 @@ public class DetailActivity
 
         final TextView detailYLocation = (TextView) findViewById(R.id.detail_y_location);
         detailYLocation.setText(String.valueOf(sample.getyCoord()));
+
+        final Button editButton = (Button) findViewById(R.id.edit_button);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(DetailActivity.this, AddSampleActivity.class);
+                intent.putExtra("soilSampleId", sample.getId());
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 }

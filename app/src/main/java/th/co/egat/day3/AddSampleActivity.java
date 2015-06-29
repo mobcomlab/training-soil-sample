@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import th.co.egat.day3.managers.DatabaseManager;
+import th.co.egat.day3.models.SoilSample;
 
 
 public class AddSampleActivity extends AppCompatActivity {
@@ -29,6 +30,22 @@ public class AddSampleActivity extends AppCompatActivity {
         final EditText dateText = (EditText) findViewById(R.id.add_date);
         final EditText phText = (EditText) findViewById(R.id.add_ph);
         final EditText cdText = (EditText) findViewById(R.id.add_cd);
+
+        // If a sample id was sent then load data to be edited
+        final String soilSampleId = getIntent().getStringExtra("soilSampleId");
+        if (soilSampleId != null) {
+            SoilSample sample = new DatabaseManager(this).getSoilSample(soilSampleId);
+            if (sample != null) {
+                idText.setText(sample.getId());
+                xCoordText.setText(Double.toString(sample.getxCoord()));
+                yCoordText.setText(Double.toString(sample.getyCoord()));
+                final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
+                dateText.setText(sdf.format(sample.getDate()));
+                phText.setText(Float.toString(sample.getPh()));
+                cdText.setText(Integer.toString(sample.getCd()));
+            }
+
+        }
 
         Button btn = (Button) findViewById(R.id.btn_add);
         btn.setOnClickListener(new View.OnClickListener() {
