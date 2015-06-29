@@ -3,7 +3,7 @@
     <string name="action_add">Add new sample</string>
     <string name="action_delete">Delete samples</string>
     <string name="action_get_from_ws">Get from 3M</string>
-    <string name="title_activity_add_sample">AddSampleActivity</string>
+    <string name="title_activity_add_sample">Sample</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
